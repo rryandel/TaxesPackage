@@ -1,22 +1,41 @@
 ---
-title: "TaxesVignette"
+title: "Taxes"
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{TaxesVignette}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
-
+#
 Taxes is a simple package that allows users to input a state (or a vector of states) and it will return the given tax rate for those states. Append_tax_rates takes a data frame with a vector of states and adds another column to the data frame with the relevant tax rates.
 
-
+##
 
 This package also has a **budget** function that allows a user to input a state, a price of a good, and how much they are willing to pay. The function will calculate the tax rate for the price, and it will compare it to the budget.
 
 
+###
 
+**Function**: tax_rate(state)
+    
+{Argument}: state a string or vector containing states in the format "AB"
+    
+**Function**: append_tax_rates(data, data_frame)
+    
+{Argument}: data a vector containing states in the format "AB"
+    
+{Argument}: data_frame a data frame containing a vector of states
+    
+**Function** budget(state, price, budget)
+    
+{Argument}: price a numeric
+    
+{Argument} budget a numeric
+     
 
 $EXAMPLES$
+
+####
 
 `tax_rate("NC")`
 
@@ -26,22 +45,21 @@ return: 0.0698
 
 return:
 
-  Tax Rate states 
-1   6.25 %     MA   
-2   5.75 %     VA 
-3   8.52 %     NY 
-4   6.98 %     NC   
-5      6 %     MD 
-6     NA %     OH 
-7   7.01 %     FL 
-8   7.35 %     GA 
+| Tax Rate | States|
+|---------:|:------|
+|  6.25 %  |   MA  | 
+|  5.75 %  |   VA  |
+|  8.52 %  |   NY  | 
+|  6.98 %  |   NC  |
+|  6.00 %  |   MD  |
+
 
 
 `budget("MA", 300, 315)`
 
 return: "Your tax-adjusted price is over your budget"
 
-
+#####
 
 
 
